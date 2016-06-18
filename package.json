@@ -20,7 +20,6 @@
     "definition": "build/prestRequester.d.ts"
   },
   "scripts": {
-    "prepublish": "./prepublish"
   },
   "dependencies": {
     "q": "1.4.1"
