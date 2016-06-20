@@ -4,24 +4,27 @@
   "description": "Presto requester for Plywood (within node)",
   "keywords": [
     "presto",
-    "requester"
+    "requester",
+    "plywood"
   ],
   "author": {
-    "name": "Vadim Ogievetsky",
-    "url": "http://vadim.ogievetsky.com"
+    "name": "Tarek Rached",
+    "url": "http://tarekrached.com"
   },
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/implydata/plywood-presto-requester.git"
   },
-  "main": "build/prestRequester.js",
+  "main": "build/prestoRequester.js",
   "typescript": {
-    "definition": "build/prestRequester.d.ts"
+    "definition": "build/prestoRequester.d.ts"
   },
   "scripts": {
+    "prepublish": "./prepublish"
   },
   "dependencies": {
+    "presto-client": "0.1.0",
     "q": "1.4.1"
   },
   "devDependencies": {
