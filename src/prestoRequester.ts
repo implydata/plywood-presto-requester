@@ -62,11 +62,16 @@ export function prestoRequesterFactory(parameters: PrestoRequesterParameters): R
         });
 
         var deferred = <Q.Deferred<any[]>>(Q.defer());
-        connection.execute(query, (err, data) => {
+        connection.execute(query, (err, data, columns) => {
+          var rows = data.map((row: any) => row.reduce((memo: any, col: any, i:any) => {
+              memo[columns[i].name] = col;
+              return memo;
+            }, {})
+          );
           if (err) {
             deferred.reject(err);
           } else {
-            deferred.resolve(data);
+            deferred.resolve(rows);
           }
         });
         return deferred.promise;
